@@ -1,0 +1,26 @@
+//Jaz Harris
+//MyTermite Class
+
+import info.gridworld.actor.Termite 
+
+public class MyTermite extends Termite
+{
+  public void act()
+  {
+    if(getGrid() == null)
+      return;
+    if(seesFlower() && !hasFlower())
+    {
+      pickUpFlower();
+    }
+    if(seesFlower() && hasFlower())
+    {
+      dropFlower();
+    }
+    if(canMove())
+    {
+      move();
+    }
+    randomTurn();
+  }
+}

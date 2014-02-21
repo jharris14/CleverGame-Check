@@ -1,7 +1,9 @@
 //Jaz Harris
-//Pieces class
+//BlackPiece class
 
 package info.gridworld.actor;
+import info.gridworld.grid.Grid;
+import info.gridworld.grid.Location;
 import java.awt.Color;
 import info.gridworld.actor.Bug;
 
@@ -26,4 +28,19 @@ public class BlackPiece extends Bug
   public void act()
   {
   }
+  
+  public void move()//move method from bug modified so the piece leaves behind a black square
+    {
+        Grid<Actor> gr = getGrid();
+        if (gr == null)
+            return;
+        Location loc = getLocation();
+        Location next = loc.getAdjacentLocation(getDirection());
+        if (gr.isValid(next))
+            moveTo(next);
+        else
+            removeSelfFromGrid();
+        BlackSquare blank = new BlackSquare();//the modification, leaves behind a black square instead of a flower
+        blank.putSelfInGrid(gr, loc);
+    }
 }

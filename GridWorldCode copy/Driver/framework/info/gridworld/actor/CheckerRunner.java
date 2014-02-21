@@ -2,8 +2,6 @@
 //CheckersRunner
 
 import info.gridworld.actor.ActorWorld;
-import info.gridworld.actor.Bug;
-import info.gridworld.actor.Rock;
 import info.gridworld.actor.BlackSquare;
 import info.gridworld.actor.WhitePiece;
 import info.gridworld.actor.BlackPiece;
@@ -15,7 +13,7 @@ public class CheckerRunner
 {
   public static void main(String[] args)
     {
-    TestWorld gettingBoard = new TestWorld();//making a new TestWorld
+    TestWorld gettingBoard = new TestWorld(new BoundedGrid(8,8));//making a new TestWorld
     for(int i=0; i <= 2; i = i +2)//for loop to add two rows of black pieces
     {
       for(int j=0; j <= 6; j = j +2)

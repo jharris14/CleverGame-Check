@@ -1,0 +1,29 @@
+//Jaz Harris
+//DancingBug Class
+
+import info.gridworld.actor.Bug;
+
+public class DancingBug extends Bug
+{
+  private int[] tempAry;
+  public DancingBug(int[] ary)
+  {
+    tempAry = ary;
+  }
+  public void act()
+  {
+    int numTurns = 0;
+    boolean dDR = true;
+    while(dDR)
+    {
+      for(int x = 0; x < tempAry.length-1; x++)
+      {
+        for(int i = 0; i < tempAry[x]; i++)
+        {
+          turn();
+        }
+        move();
+      }
+    }
+  }
+}

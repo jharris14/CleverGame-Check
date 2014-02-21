@@ -1,0 +1,8 @@
+//Jaz Harris
+//Making the board (again)
+
+public class Background extends Actor
+{
+  public Background(Color color) {setColor(color);}
+  public String getText() {return "";}
+}

@@ -1,0 +1,39 @@
+//Jaz Harris
+//Langton's Termite
+
+public class LangtonTermite extends Termite
+{
+  public void act()
+  {
+    if(hasFlower())//if you're on a black square
+    {
+      turn();
+      turn();
+      turn();
+      turn();
+      turn();
+      turn();//turn to the left
+      if(canMove())//then move forward
+      {
+      move();
+      }
+      throwFlower();//gets rid of the flower you're holding
+    }
+    if(!hasFlower())//if you're on a white square
+    {
+      createFlower();//make a flower
+      turn();
+      turn();
+      dropFlower();//put a flower on the space you're at
+      if(canMove())
+      {
+      move();//then move
+      }
+    }
+  }
+  public void throwFlower()
+  {
+    flower = null; //gets rid of any flower you're holding
+  }
+}
+      

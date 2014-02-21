@@ -1,0 +1,23 @@
+//Jaz Harris
+//DancingBugRunner
+
+import info.gridworld.actor.ActorWorld;
+import info.gridworld.actor.Bug;
+import info.gridworld.actor.Rock;
+
+public class DancingBugRunner
+{
+  public static void main(String[] args)
+  {
+    int[] anArray = new int[5];
+    anArray.set(0, 3);
+    anArray.set(1, 4);
+    anArray.set(2, 2);
+    anArray.set(3, 5);
+    anArray.set(4, 2);
+    ActorWorld world = new ActorWorld();
+    world.add(new DancingBug(anArray));
+    world.add(new Rock());
+    world.show();
+  }
+}
