@@ -22,11 +22,11 @@ public class TestWorld extends ActorWorld
   }
   /* gets the location of the click (input from user) 
    * and offers a choice between left and right to move
-   * */
+   * 
   private boolean locationClicked()
   {
     Location loc = display.getCurrentLocation();
     System.out.println("Location clicked: " + loc);
     return true;
-  }
+  }*/
 }
