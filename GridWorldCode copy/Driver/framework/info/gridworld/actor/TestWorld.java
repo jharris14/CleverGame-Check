@@ -15,7 +15,7 @@ import info.gridworld.actor.Critter;
 import info.gridworld.grid.Location;
 
 
-public class TestWorld extends World
+public class TestWorld extends ActorWorld
 {
   private boolean alreadyClicked = false;//making a boolean to determine if the first click was made
   private Location loc;//creating a new location
