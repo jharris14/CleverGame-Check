@@ -20,27 +20,11 @@ public class BlackPiece extends Bug
     setColor(DEFAULT_COLOR);
   }
   
-  public BlackPiece(Color color)
-  {
-    setColor(color);
-  }
-  
   public void act()
   {
   }
   
-  public void move()//move method from bug modified so the piece leaves behind a black square
+  public void move()//move method from bug modified so nothing can be done (where is your god now?)
     {
-        Grid<Actor> gr = getGrid();
-        if (gr == null)
-            return;
-        Location loc = getLocation();
-        Location next = loc.getAdjacentLocation(getDirection());
-        if (gr.isValid(next))
-            moveTo(next);
-        else
-            removeSelfFromGrid();
-        BlackSquare blank = new BlackSquare();//the modification, leaves behind a black square instead of a flower
-        blank.putSelfInGrid(gr, loc);
     }
 }

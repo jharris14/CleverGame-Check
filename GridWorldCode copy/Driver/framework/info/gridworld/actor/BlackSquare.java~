@@ -12,7 +12,7 @@ import info.gridworld.actor.Flower;
 
 public class BlackSquare extends Flower
 {
-  private static final Color DEFAULT_COLOR = Color.BLACK;//sets the default color to black
+  private static final Color DEFAULT_COLOR = Color.WHITE;//sets the default color to black
   
   public BlackSquare()
   {

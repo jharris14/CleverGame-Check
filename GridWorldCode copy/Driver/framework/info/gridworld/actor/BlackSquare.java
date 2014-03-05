@@ -2,6 +2,7 @@
 //BlackSquare (exactly what it sounds like)
 
 package info.gridworld.actor;
+
 import java.awt.Color;
 import info.gridworld.actor.Flower;
 

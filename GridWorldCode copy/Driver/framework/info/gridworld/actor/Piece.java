@@ -9,7 +9,7 @@ import info.gridworld.actor.Bug;
  * it'll know its color
  * */
 
-public class WhitePiece extends Bug
+public class Piece extends Bug
 {
   public Piece()
   {

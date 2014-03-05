@@ -1,4 +1,4 @@
-//Jaz Harris
+//Jaz Harris && Nolan Chung
 //ChessWorld
 import java.awt.*;
 import java.awt.event.*;
@@ -17,15 +17,18 @@ import info.gridworld.grid.Location;
 
 public class TestWorld extends ActorWorld
 {
-  private boolean alreadyClicked = false;//making a boolean to determine if the first click was made
+  private boolean playerTurn = true;//making a boolean to keep track of who's turn it is
   private Location loc;//creating a new location
-  private boolean turn = true;//making a boolean to keep track of who's turn it is
-  private boolean pieceIsKing = false;//keeps track if the piece is a king or not
   
   public TestWorld()
   {
     super(new BoundedGrid(8, 8));
   }
+  /*
+  if(!playerTurn)
+  {
+    private BlackPiece piece = CleverNameCheckAI.choosePiece();
+  }*/
   
   /* gets the location of the click (input from user) 
    * and offers a choice between left and right to move

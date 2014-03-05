@@ -1,5 +1,5 @@
 //Jaz Harris
-//Pieces class
+//BlackPiece class
 
 package info.gridworld.actor;
 import info.gridworld.grid.Grid;
@@ -29,18 +29,7 @@ public class BlackPiece extends Bug
   {
   }
   
-  public void move()//move method from bug modified so the piece leaves behind a black square
+  public void move()//move method from bug modified so nothing can be done (where is your god now?)
     {
-        Grid<Actor> gr = getGrid();
-        if (gr == null)
-            return;
-        Location loc = getLocation();
-        Location next = loc.getAdjacentLocation(getDirection());
-        if (gr.isValid(next))
-            moveTo(next);
-        else
-            removeSelfFromGrid();
-        BlackSquare blank = new BlackSquare();//the modification, leaves behind a black square instead of a flower
-        blank.putSelfInGrid(gr, loc);
     }
 }

@@ -1,5 +1,5 @@
 //Jaz Harris
-//Pieces class
+//WhitePiece class
 
 package info.gridworld.actor;
 import info.gridworld.grid.Grid;
@@ -20,27 +20,44 @@ public class WhitePiece extends Bug
     setColor(DEFAULT_COLOR);
   }
   
-  public WhitePiece(Color color)//allows for a change in color
+  public void moveLeft()//move method from bug modified to only move left
   {
-    setColor(color);
+    setDirection(315);
+    Grid<Actor> gr = getGrid();
+    if (gr == null)
+      return;
+    Location loc = getLocation();
+    Location next = loc.getAdjacentLocation(getDirection());
+    if (gr.isValid(next))
+      moveTo(next);
+    else
+      removeSelfFromGrid();
+    BlackSquare blank = new BlackSquare();//the modification, leaves behind a black square instead of a flower
+    blank.putSelfInGrid(gr, loc);
+    setDirection(0);
+  }
+  public void moveRight()//move method from bug modified to only move right
+  {
+    setDirection(45);
+    Grid<Actor> gr = getGrid();
+    if (gr == null)
+      return;
+    Location loc = getLocation();
+    Location next = loc.getAdjacentLocation(getDirection());
+    if (gr.isValid(next))
+      moveTo(next);
+    else
+      removeSelfFromGrid();
+    BlackSquare blank = new BlackSquare();//the modification, leaves behind a black square instead of a flower
+    blank.putSelfInGrid(gr, loc);
+    setDirection(0);
   }
   
   public void act()
   {
   }
   
-  public void move()//move method from bug modified so the piece leaves behind a black square
-    {
-        Grid<Actor> gr = getGrid();
-        if (gr == null)
-            return;
-        Location loc = getLocation();
-        Location next = loc.getAdjacentLocation(getDirection());
-        if (gr.isValid(next))
-            moveTo(next);
-        else
-            removeSelfFromGrid();
-        BlackSquare blank = new BlackSquare();//the modification, leaves behind a black square instead of a flower
-        blank.putSelfInGrid(gr, loc);
-    }
+  public void turn()
+  {
+  }
 }

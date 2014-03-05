@@ -1,0 +1,55 @@
+//Jaz Harris
+//Adam and Eve
+
+package test4click;
+package actor; 
+
+import java.awt.Color;
+
+public class AdamAndEve
+{
+  private boolean color;
+  
+  public AdamAndEve(boolean color)
+  {
+    this.color = color;
+  }
+  
+  public AdamAndEve(Color color)
+  {
+    if(Color.BLUE.equals(color))
+    {
+      this.color = true;
+    }
+    else if(Color.RED.equals(color))
+    {
+      this.color = false;
+    }
+    else
+    {
+      throw new IllegalArgumentException("color must be BLUE or RED");
+    }
+  }
+  
+  public boolean color()
+  {
+    return color;
+  }
+  
+  public Color getColor()
+  {
+    if(color)
+    {
+      return Color.BLUE;
+    }
+    else
+    {
+      return Color.RED;
+    }
+  }
+  
+  public void move()
+  {
+    Grid<Actor>
+    
+}
