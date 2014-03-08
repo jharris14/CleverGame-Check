@@ -13,16 +13,11 @@ import info.gridworld.actor.Bug;
 
 public class BlackPiece extends Bug
 {
-  private static final Color DEFAULT_COLOR = Color.WHITE;
+  private static final Color DEFAULT_COLOR = Color.BLACK;
   
   public BlackPiece()
   {
     setColor(DEFAULT_COLOR);
-  }
-  
-  public BlackPiece(Color color)
-  {
-    setColor(color);
   }
   
   public void act()

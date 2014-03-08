@@ -9,15 +9,13 @@ import info.gridworld.world.World;
 import info.gridworld.grid.BoundedGrid;
 import info.gridworld.actor.ActorWorld;
 import info.gridworld.actor.WhitePiece;
-import info.gridworld.actor.Rock;
-import info.gridworld.actor.Flower;
-import info.gridworld.actor.Critter;
+import info.gridworld.actor.WhiteKing;
 import info.gridworld.grid.Location;
 
 
 public class TestWorld extends ActorWorld
 {
-  private boolean playerTurn = true;//making a boolean to keep track of who's turn it is
+  public boolean playerTurn = true;//making a boolean to keep track of who's turn it is
   private Location loc;//creating a new location
   
   public TestWorld()
@@ -25,10 +23,12 @@ public class TestWorld extends ActorWorld
     super(new BoundedGrid(8, 8));
   }
   
+  
+  /*
   if(!playerTurn)
   {
     private BlackPiece piece = CleverNameCheckAI.choosePiece();
-  }
+  }*/
   
   /* gets the location of the click (input from user) 
    * and offers a choice between left and right to move
@@ -36,13 +36,13 @@ public class TestWorld extends ActorWorld
   private boolean locationClicked(Location loc)
   {
     
-    if(!turn)//AI's turn
+    if(!playerTurn)//AI's turn
     {
       setMessage("Computer's turn");
       return true;
     }
     
-    if(turn && !(loc.getActor() instanceof WhitePiece))//players can only move white pieces, prevents altering everything else
+    if(playerTurn && !(loc.getActor() instanceof WhitePiece))//players can only move white pieces, prevents altering everything else
     {
       setMessage("Invalid click");
       return true;

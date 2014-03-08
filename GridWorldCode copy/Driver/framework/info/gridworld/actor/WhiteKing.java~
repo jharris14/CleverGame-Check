@@ -1,0 +1,193 @@
+//Jaz Harris
+//WhiteKing class
+
+package info.gridworld.actor;
+import info.gridworld.grid.Grid;
+import info.gridworld.grid.Location;
+import java.awt.Color;
+import info.gridworld.actor.WhitePiece;
+
+public class WhiteKing extends WhitePiece
+{
+    private static final Color DEFAULT_COLOR = Color.WHITE;//defaut color = white
+  
+  public WhiteKing()//sets color to default color, which is white
+  {
+    setColor(DEFAULT_COLOR);
+  }
+  
+  /*method to move left and up
+   * */
+  
+  public void moveLeftUp()//move method from bug modified to only move left and up
+  {
+    setDirection(315);//turning to Northeast
+    Grid<Actor> gr = getGrid();
+    if (gr == null)
+      return;
+    Location loc = getLocation();
+    Location next = loc.getAdjacentLocation(getDirection());
+    Location beyondNext = next.getAdjacentLocation(getDirection());//getting the location beyond the next one
+    boolean canJump = defyingGravity(315, next, gr);//calling on the private method defyingGravity to see if the piece can jump
+    boolean nextSpaceClear = lookingForward(next);//calling on the private method to check if there's an empty space
+    if(canJump)
+    {
+      moveTo(next);
+      BlackSquare blank = new BlackSquare();//the modification, leaves behind a black square where the piece used to be
+      blank.putSelfInGrid(gr, loc);
+      moveTo(beyondNext);//moving the piece to the location beyond next
+      BlackSquare blank2 = new BlackSquare();//another black square
+      blank2.putSelfInGrid(gr, next);//put the black square where the "eaten" piece used to be
+    }
+    else if (gr.isValid(next) && nextSpaceClear)//if the next move is valid and there isn't already a piece there
+    {
+      moveTo(next);
+      BlackSquare blank = new BlackSquare();//the modification, leaves behind a black square instead of a flower
+      blank.putSelfInGrid(gr, loc);
+    }
+    else if(!nextSpaceClear)//if the next space isn't clear (has another piece there)
+    {
+      setDirection(0);
+      return;
+    }
+    
+    else//if the next location isn't in the grid then reset the direction and return null
+    {
+      setDirection(0);
+      return;
+    }
+    setDirection(0);//resetting the direction to 0 so the image is right
+  }
+  
+  public void moveLeftDown()//move method from bug modified to only move left down
+  {
+    setDirection(225);//turning to Southwest
+    Grid<Actor> gr = getGrid();
+    if (gr == null)
+      return;
+    Location loc = getLocation();
+    Location next = loc.getAdjacentLocation(getDirection());
+    Location beyondNext = next.getAdjacentLocation(getDirection());//getting the location beyond the next one
+    boolean canJump = defyingGravity(45, next, gr);//calling on the private method defyingGravity to see if the piece can jump
+    boolean nextSpaceClear = lookingForward(next);//calling on the private method to check if there's an empty space
+    if(canJump)
+    {
+      moveTo(next);
+      BlackSquare blank = new BlackSquare();//the modification, leaves behind a black square where the piece used to be
+      blank.putSelfInGrid(gr, loc);
+      moveTo(beyondNext);//moving the piece to the location beyond next
+      BlackSquare blank2 = new BlackSquare();//another black square
+      blank2.putSelfInGrid(gr, next);//put the black square where the "eaten" piece used to be
+    }
+    else if (gr.isValid(next) && nextSpaceClear)//if the next move is valid and there isn't already a piece there
+    {
+      moveTo(next);
+      BlackSquare blank = new BlackSquare();//the modification, leaves behind a black square instead of a flower
+      blank.putSelfInGrid(gr, loc);
+    }
+    else if(!nextSpaceClear)//if the next space isn't clear (has another piece there)
+    {
+      setDirection(0);
+      return;
+    }
+    else//if the next location isn't in the grid then reset the direction and return null
+    {
+      setDirection(0);
+      return;
+    }
+    setDirection(0);//resetting the direction to 0 so the image is right
+  }
+  
+  public void moveRightUp()//move method from bug modified to only move right and up
+  {
+    setDirection(45);//turning to Northeast
+    Grid<Actor> gr = getGrid();
+    if (gr == null)
+      return;
+    Location loc = getLocation();
+    Location next = loc.getAdjacentLocation(getDirection());
+    Location beyondNext = next.getAdjacentLocation(getDirection());//getting the location beyond the next one
+    boolean canJump = defyingGravity(45, next, gr);//calling on the private method defyingGravity to see if the piece can jump
+    boolean nextSpaceClear = lookingForward(next);//calling on the private method to check if there's an empty space
+    if(canJump)
+    {
+      moveTo(next);
+      BlackSquare blank = new BlackSquare();//the modification, leaves behind a black square where the piece used to be
+      blank.putSelfInGrid(gr, loc);
+      moveTo(beyondNext);//moving the piece to the location beyond next
+      BlackSquare blank2 = new BlackSquare();//another black square
+      blank2.putSelfInGrid(gr, next);//put the black square where the "eaten" piece used to be
+    }
+    else if (gr.isValid(next) && nextSpaceClear)//if the next move is valid and there isn't already a piece there
+    {
+      moveTo(next);
+      BlackSquare blank = new BlackSquare();//the modification, leaves behind a black square instead of a flower
+      blank.putSelfInGrid(gr, loc);
+    }
+    else if(!nextSpaceClear)//if the next space isn't clear (has another piece there)
+    {
+      setDirection(0);
+      return;
+    }
+    else//if the next location isn't in the grid then reset the direction and return null
+    {
+      setDirection(0);
+      return;
+    }
+    setDirection(0);//resetting the direction to 0 so the image is right
+  }
+  
+  public void moveRightDown()//move method from bug modified to only move right and down
+  {
+    setDirection(135);//turning to Southeast
+    Grid<Actor> gr = getGrid();
+    if (gr == null)
+      return;
+    Location loc = getLocation();
+    Location next = loc.getAdjacentLocation(getDirection());
+    Location beyondNext = next.getAdjacentLocation(getDirection());//getting the location beyond the next one
+    boolean canJump = defyingGravity(135, next, gr);//calling on the private method defyingGravity to see if the piece can jump
+    boolean nextSpaceClear = lookingForward(next);//calling on the private method to check if there's an empty space
+    if(canJump)
+    {
+      moveTo(next);
+      BlackSquare blank = new BlackSquare();//the modification, leaves behind a black square where the piece used to be
+      blank.putSelfInGrid(gr, loc);
+      moveTo(beyondNext);//moving the piece to the location beyond next
+      BlackSquare blank2 = new BlackSquare();//another black square
+      blank2.putSelfInGrid(gr, next);//put the black square where the "eaten" piece used to be
+    }
+    else if (gr.isValid(next) && nextSpaceClear)//if the next move is valid and there isn't already a piece there
+    {
+      moveTo(next);
+      if(beyondNext.getRow() == 0)//if the piece is at the end, make it a king
+      {
+        removeSelfFromGrid();
+        WhiteKing newKing = new WhiteKing();
+        newKing.putSelfInGrid(gr,beyondNext);
+      }
+      BlackSquare blank = new BlackSquare();//the modification, leaves behind a black square instead of a flower
+      blank.putSelfInGrid(gr, loc);
+    }
+    else if(!nextSpaceClear)//if the next space isn't clear (has another piece there)
+    {
+      setDirection(0);
+      return;
+    }
+    else//if the next location isn't in the grid then reset the direction and return null
+    {
+      setDirection(0);
+      return;
+    }
+    setDirection(0);//resetting the direction to 0 so the image is right
+  }
+  
+  public void act()
+  {
+  }
+  
+  public void turn()
+  {
+  }
+
+}
