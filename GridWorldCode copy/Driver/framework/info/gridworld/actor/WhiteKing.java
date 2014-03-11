@@ -3,6 +3,7 @@
 
 package info.gridworld.actor;
 import info.gridworld.grid.Grid;
+import info.gridworld.world.World;
 import info.gridworld.grid.Location;
 import java.awt.Color;
 import info.gridworld.actor.WhitePiece;

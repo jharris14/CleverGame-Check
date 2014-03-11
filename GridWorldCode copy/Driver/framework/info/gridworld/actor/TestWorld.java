@@ -1,5 +1,5 @@
 //Jaz Harris && Nolan Chung
-//ChessWorld
+//ChessWorld 
 
 import java.awt.*;
 import java.awt.event.*;
@@ -12,20 +12,21 @@ import info.gridworld.actor.ActorWorld;
 import info.gridworld.actor.WhitePiece;
 import info.gridworld.actor.WhiteKing;
 import info.gridworld.grid.Location;
+import info.gridworld.actor.CleverNameCheckAI;
 
 
 public class TestWorld extends ActorWorld
 {
-  WhosTurnIsItAnyway gameTurn = new WhosTurnIsItAnyway();//making a boolean to keep track of who's turn it is
-  private Location loc;//creating a new location
   
   public TestWorld()
   {
     super(new BoundedGrid(8, 8));
+    /*
     if(gameTurn.getTurn() == false)
     {
       System.out.println("Nolan does stuff");
-    }
+    }*/
+    /*CleverNameCheckAI nolan = new CleverNameCheckAI();*/
   }
   
   

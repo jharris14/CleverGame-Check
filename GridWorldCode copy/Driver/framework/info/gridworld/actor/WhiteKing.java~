@@ -68,7 +68,7 @@ public class WhiteKing extends WhitePiece
     Location loc = getLocation();
     Location next = loc.getAdjacentLocation(getDirection());
     Location beyondNext = next.getAdjacentLocation(getDirection());//getting the location beyond the next one
-    boolean canJump = defyingGravity(45, next, gr);//calling on the private method defyingGravity to see if the piece can jump
+    boolean canJump = defyingGravity(225, next, gr);//calling on the private method defyingGravity to see if the piece can jump
     boolean nextSpaceClear = lookingForward(next);//calling on the private method to check if there's an empty space
     if(canJump)
     {

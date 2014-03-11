@@ -6,6 +6,7 @@ import info.gridworld.grid.Grid;
 import info.gridworld.grid.Location;
 import java.awt.Color;
 import info.gridworld.actor.Bug;
+import info.gridworld.actor.BlackPiece;
 
 /* making a class for each white checker piece
  * it'll know its color
@@ -19,6 +20,7 @@ public class WhitePiece extends Bug
   {
     setColor(DEFAULT_COLOR);
   }
+  /////////////////////////////////////////////////////Moving Left////////////////////////////////////////////////////////////////////
   
   public void moveLeft()//move method from bug modified to only move left
   {
@@ -45,7 +47,7 @@ public class WhitePiece extends Bug
         WhiteKing newKing = new WhiteKing();
         newKing.putSelfInGrid(gr,next);
       }
-      /*
+    
       if(canJump)//for double jumps
       {
         Location beyondTheBeyond = beyondNext.getAdjacentLocation(getDirection());
@@ -60,9 +62,9 @@ public class WhitePiece extends Bug
         {
           removeSelfFromGrid();
           WhiteKing newKing = new WhiteKing();
-          newKing.putSelfInGrid(gr,beyondTheBeyond);
+          newKing.putSelfInGrid(gr,theEnd);
         }
-      }*/
+      }
     }
     else if (gr.isValid(next) && nextSpaceClear)//if the next move is valid and there isn't already a piece there
     {
@@ -90,6 +92,8 @@ public class WhitePiece extends Bug
     setDirection(0);//resetting the direction to 0 so the image is right
   }
   
+  ////////////////////////////////////////////////////////Moving Right///////////////////////////////////////////////////////////////////
+  
   public void moveRight()//move method from bug modified to only move right
   {
     setDirection(45);//turning to Northwest
@@ -115,7 +119,7 @@ public class WhitePiece extends Bug
         WhiteKing newKing = new WhiteKing();
         newKing.putSelfInGrid(gr,beyondNext);
       }
-      /*
+      
       if(canJump)//for double jumps
       {
         Location beyondTheBeyond = beyondNext.getAdjacentLocation(getDirection());
@@ -130,9 +134,9 @@ public class WhitePiece extends Bug
         {
           removeSelfFromGrid();
           WhiteKing newKing = new WhiteKing();
-          newKing.putSelfInGrid(gr,beyondTheBeyond);
+          newKing.putSelfInGrid(gr,theEnd);
         }
-      }*/
+      }
     }
     else if (gr.isValid(next) && nextSpaceClear)//if the next move is valid and there isn't already a piece there
     {
@@ -159,6 +163,8 @@ public class WhitePiece extends Bug
     setDirection(0);//resetting the direction to 0 so the image is right
   }
   
+  ///////////////////////////////////////////////////Boolean to Jump/////////////////////////////////////////////////////////////////////
+  
   /* method to determine if the piece can jump 
    * takes parameter direction and next location
    */
@@ -173,6 +179,9 @@ public class WhitePiece extends Bug
       return false;
   }
   
+  
+  //////////////////////////////////////////////////Boolean for checking a space//////////////////////////////////////////////////////////
+  
   /*method to tell whether or not the next square is an open space
    * takes a parameter of a location which is the next space
    * */
@@ -182,6 +191,13 @@ public class WhitePiece extends Bug
       return true;
     else
       return false;
+  }
+  
+  ///////////////////////////////////////////////////Method to Call Nolan's AI///////////////////////////////////////////////////////////
+  
+  public void ComputerMove()
+  {
+    
   }
   
   

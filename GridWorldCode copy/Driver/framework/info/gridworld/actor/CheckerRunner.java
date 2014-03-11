@@ -1,6 +1,6 @@
 //Jaz Harris
 //CheckersRunner
-
+ 
 import info.gridworld.actor.ActorWorld;
 import info.gridworld.actor.BlackSquare;
 import info.gridworld.actor.WhitePiece;
@@ -13,6 +13,7 @@ public class CheckerRunner
 {
   public static void main(String[] args)
     {
+    BlackPiece computer = new BlackPiece();
     TestWorld gettingBoard = new TestWorld();//making a new TestWorld
     for(int i=0; i <= 2; i = i +2)//for loop to add two rows of black pieces
     {
